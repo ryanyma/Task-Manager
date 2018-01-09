@@ -5,7 +5,9 @@ var mongoose = require('mongoose');
 mongoose.Promise = global.Promise; // use native mongoose promises﻿
 
 //connect to the database
-mongoose.connect('mongodb://<test>:<test>@ds249737.mlab.com:49737/task-manager');
+mongoose.connect('mongodb://<test>:<test>@ds249737.mlab.com:49737/task-manager', {
+	useMongoClient: true
+});
 
 //create schema (blueprint for data)
 var todoSchema = new mongoose.Schema({
